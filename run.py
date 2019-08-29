@@ -26,7 +26,7 @@ sticky (string, optional): Stick the navbar to the top or the bottom of the view
 """
 
 navbar = dbc.NavbarSimple(
-    brand='YOUR APP NAME',
+    brand='CA Hospitals Mortality Rates',
     brand_href='/', 
     children=[
         dbc.NavItem(dcc.Link('Predictions', href='/predictions', className='nav-link')), 
@@ -44,11 +44,11 @@ footer = dbc.Container(
         dbc.Col(
             html.P(
                 [
-                    html.Span('Your Name', className='mr-2'), 
-                    html.A(html.I(className='fas fa-envelope-square mr-1'), href='mailto:<you>@<provider>.com'), 
-                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/<you>/<repo>'), 
-                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/<you>/'), 
-                    html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/<you>'), 
+                    html.Span('John Morrison', className='mr-2'), 
+                    html.A(html.I(className='fas fa-envelope-square mr-1'), href='mailto:jjosephmorrison@gmail.com'), 
+                    html.A(html.I(className='fab fa-github-square mr-1'), href='https://github.com/JohnMorrisonn/CA-hospital-mortality-rates'), 
+                    html.A(html.I(className='fab fa-linkedin mr-1'), href='https://www.linkedin.com/in/johnjmorrison/'), 
+                    html.A(html.I(className='fab fa-twitter-square mr-1'), href='https://twitter.com/John_J_Morrison'), 
                 ], 
                 className='lead'
             )
