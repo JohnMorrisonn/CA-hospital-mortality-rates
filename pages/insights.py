@@ -18,10 +18,25 @@ column1 = dbc.Col(
             as hospital mortality rates with a sufficient degree of accuracy would require a plethora of variables
             that were not provided in this dataset.
 
-            Displayed on the right is feature importances from several features of the model. 
+            Partial Dependency Plots of the top two features, Number of Cases and Hospital Ratings, and the least important
+            feature, Year, are displayed to the right.
+
+            The number of cases being extremely important gives note that a high number of patients are still heading 
+            into the hospital for these conditions or procedures that have a higher probability of death.
+            
+            The hospital ratings high importance shows that they correlate with the number of deaths predicted giving
+            more meaning to the initial ratings.
+            
+            Lastly, the year being of least importance shows that the time gap is too small between 2012-2015 to see a
+            significant difference in the number of deaths for these conditions/procedures.
+
+            Below are all of the features rated by importance to the predictive model.
 
             """
         ),
+        html.Br(),
+        html.Div(html.Img(src='assets/Feature Importance.PNG', className='img-fluid')),
+        
     ],
     md=5,
 )
@@ -30,6 +45,11 @@ column1 = dbc.Col(
 column2 = dbc.Col(
     [
         
+        html.Div(html.Img(src='assets/PDP_Cases.PNG', className='img-fluid')),
+        html.Br(),
+        html.Div(html.Img(src='assets/PDP_ratings.PNG', className='img-fluid')),
+        html.Br(),
+        html.Div(html.Img(src='assets/PDP_year.PNG', className='img-fluid')),
     ]
 )
 
