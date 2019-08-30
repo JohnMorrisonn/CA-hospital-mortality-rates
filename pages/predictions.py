@@ -6,6 +6,7 @@ import plotly.express as px
 import pandas as pd
 import numpy as np
 import shap
+import json
 import plotly.graph_objects as go
 from matplotlib import pyplot as plt
 from dash.dependencies import Input, Output
@@ -116,9 +117,10 @@ column1 = dbc.Col(
         dcc.Markdown(
             """   
             ### Base Predictive Model
+            -------------------------
 
             Select the specific county and procedure or condition to compare the predicted result to the actual number of deaths.
-
+            (Select the 'Show closest data on hover' tab for the graph)
             """
         ),
         
@@ -155,6 +157,36 @@ column1 = dbc.Col(
                 {'label': 'Merced', 'value': 'Merced'},
                 {'label': 'Modoc', 'value': 'Modoc'},
                 {'label': 'Mono', 'value': 'Mono'},
+                {'label': 'Monterey', 'value': 'Monterey'},
+                {'label': 'Napa', 'value': 'Napa'},
+                {'label': 'Nevada', 'value': 'Nevada'},
+                {'label': 'Orange', 'value': 'Orange'},
+                {'label': 'Placer', 'value': 'Placer'},
+                {'label': 'Plumas', 'value': 'Plumas'},
+                {'label': 'Riverside', 'value': 'Riverside'},
+                {'label': 'Sacramento', 'value': 'Sacramento'},
+                {'label': 'San Benito', 'value': 'San Benito'},
+                {'label': 'San Bernardino', 'value': 'San Bernardino'},
+                {'label': 'San Diego', 'value': 'San Diego'},
+                {'label': 'San Francisco', 'value': 'San Francisco'},
+                {'label': 'San Joaquin', 'value': 'San Joaquin'},
+                {'label': 'San Luis Obispo', 'value': 'San Luis Obispo'},
+                {'label': 'San Mateo', 'value': 'San Mateo'},
+                {'label': 'Santa Barbara', 'value': 'Santa Barbara'},
+                {'label': 'Santa Clara', 'value': 'Santa Clara'},
+                {'label': 'Santa Cruz', 'value': 'Santa Cruz'},
+                {'label': 'Shasta', 'value': 'Shasta'},
+                {'label': 'Siskiyou', 'value': 'Siskiyou'},
+                {'label': 'Solano', 'value': 'Solano'},
+                {'label': 'Sonoma', 'value': 'Sonoma'},
+                {'label': 'Stanislaus', 'value': 'Stanislaus'},
+                {'label': 'Tehama', 'value': 'Tehama'},
+                {'label': 'Trinity', 'value': 'Trinity'},
+                {'label': 'Tulare', 'value': 'Tulare'},
+                {'label': 'Tuolumne', 'value': 'Tuolumne'},
+                {'label': 'Ventura', 'value': 'Ventura'},
+                {'label': 'Yolo', 'value': 'Yolo'},
+                {'label': 'Yuba', 'value': 'Yuba'},
 
             ],
             value='Alameda'
@@ -207,6 +239,7 @@ column2 = dbc.Col(
                 'margin-left': 'auto',
                 'margin-right': 'auto'
             }),
+        
     ]
 )
 
@@ -214,6 +247,26 @@ layout = dbc.Row([column1, column2])
 
 
 ## Callbacks
+
+#Possible shap off click
+# @app.callback(
+#     Output('shap', 'figure'),
+#     [Input('basic-interactions', 'clickData')])
+# def display_click_data(clickData):
+#     return json.dumps(clickData, indent=2)
+# explainer = shap.TreeExplainer(gb)
+# row_encoded = encoder.transform(row)
+# shap_values = explainer.shap_values(row_encoded)
+
+# shap.initjs()
+# shap.force_plot(matplotlib=True,
+#     base_value=explainer.expected_value,
+#     shap_values=shap_values,
+#     features=row
+# )
+
+
+
 
 @app.callback(
     Output('prediction-graph', 'figure'),

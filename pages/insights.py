@@ -12,7 +12,7 @@ column1 = dbc.Col(
             """
         
             ## Insights
-
+            ----------------------------------------------------------------------
             This model was created to take a look into the California HMRs and to test a base predictive model.
             However, this is from a relatively small data sample with limited features.To predict a value such
             as hospital mortality rates with a sufficient degree of accuracy would require a plethora of variables
@@ -30,15 +30,17 @@ column1 = dbc.Col(
             Lastly, the year being of least importance shows that the time gap is too small between 2012-2015 to see a
             significant difference in the number of deaths for these conditions/procedures.
 
-            Below are all of the features rated by importance to the predictive model.
+            Below are all of the features rated by importance in predicting the number of deaths, and a shaply plot
+            showing a specific prediction with each feature's weighted value in the prediction.
 
             """
         ),
         html.Br(),
         html.Div(html.Img(src='assets/Feature Importance.PNG', className='img-fluid')),
-        
+        html.Br(),
+        html.Div(html.Img(src='assets/shap.PNG', className='img-fluid'))
     ],
-    md=5,
+    md=7,
 )
 
 

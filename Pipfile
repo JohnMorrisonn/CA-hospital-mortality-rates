@@ -21,6 +21,7 @@ xgboost = "*"
 dash-daq = "*"
 plotly-express = "*"
 shap = "*"
+json = "*"
 
 [requires]
 python_version = "3.7"
