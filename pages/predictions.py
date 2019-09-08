@@ -232,6 +232,7 @@ column2 = dbc.Col(
                         'x': X_test['County'],
                         'y': y_test,
                         'mode': 'bar',
+                        
                     }
                 ]
             },
@@ -276,10 +277,11 @@ layout = dbc.Row([column1, column2])
 def graph(County, PC):
 
     mask = (X_test['County'] == County) & (X_test['Procedure_Condition'] == PC)
-    
+
     layout= go.Layout(
         yaxis={'title': 'Number of Deaths'},
-        barmode='group'
+        barmode='group',
+        title=('Actual vs Predicted Number of Deaths')
     )
 
     data=[

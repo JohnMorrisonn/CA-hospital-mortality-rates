@@ -96,14 +96,16 @@ def wrangle(X):
 
 
 # Read in the dataframe
-df = pd.read_csv('https://raw.githubusercontent.com/JohnMorrisonn/CA-hospital-mortality-rates/master/CA_Hosp_Mortality.csv', encoding = 'ISO-8859-1')
+df = pd.read_csv('https://raw.githubusercontent.com/JohnMorrisonn/CA-hospital-mortality-rates/master/CA_Hosp_Mortality.csv', 
+                 encoding = 'ISO-8859-1')
 df = wrangle(df)
 
 # Remove RAMR for leaks
 newdf = df.drop(columns='RAMR')
 
 # Graph the hospitals with Number_Deaths
-fig = px.scatter(df, x="Year", y="RAMR", color="Hospital_Ratings")
+fig = px.scatter(df, x="Year", y="RAMR", color="Hospital_Ratings", 
+                 title='Risk Adjusted Mortality Rates per California Hospital')
 
 column2 = dbc.Col(
     [
